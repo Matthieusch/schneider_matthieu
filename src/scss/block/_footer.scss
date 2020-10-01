@@ -1,0 +1,29 @@
+.footer {
+    background: #324355;
+    color: #d8d8d8;
+    padding: 2rem 0;
+
+    .col-lg-4 {
+        margin: 2rem 0;
+    }
+
+    &__nav {
+        ul {
+            margin: 1rem 0 2rem;
+            padding: 0;
+        }
+
+        li{
+            list-style: none;
+        } 
+
+        a {
+            color: #d8d8d8;
+            text-decoration: underline;
+
+            &:hover {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.button {
+    display: block;
+
+    &--cornered {
+        background: linear-gradient(90deg, #3a6ef5, #20CFF3);
+        border-radius: 3px;
+        color: #fff;
+        padding: 1rem 2rem;
+        transition: background .5s ease-in-out;
+        
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+}

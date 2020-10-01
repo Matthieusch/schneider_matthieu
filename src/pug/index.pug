@@ -1,0 +1,72 @@
+//- Inclusion des mixins pour pouvoir les utiliser dans la page
+include mixins/_utils.pug
+
+doctype html
++head('Dyma, la plateforme de formation', 'Dyma est une plateforme de formation en e-learning qui forme les développeurs sur les dernières technologies du Web.')
+body
+    nav.nav NAVIGATION
+    header.header HEADER
+    
+    //- Section LANGUAGES
+    - var languages = ['htmlcss', 'javascript', 'angular', 'vue', 'react', 'node', 'flutter']
+    section.languages
+        .container
+            .languages__items
+                each language in languages
+                    figure.languages__item
+                        img.languages__img(src="images/" + language + ".png", alt=language)
+
+    section.services Section SERVICES
+
+    //- Section PARTNERS
+    - var partners = ['astek.jpg', 'caisse-nationale-assurance.png', 'century21.jpg', 'cgi.jpeg', 'chu-nice.png', 'credit-agricole.jpg', 'epfdl.png', 'naxos.png', 'open-group.png', 'worldline.png']
+    //- Version artisanale :
+    //- section.partners
+    //-     .container
+    //-         h2.title.title--tac Nos étudiants travaillent pour ces entreprises
+    //-         .partners__items
+    //-             each partner in partners
+    //-                 figure.partners__item
+    //-                     img.partners__img(src="images/" + partner, alt=partner)
+    
+    //- Version Bootstrap :
+    section.partners
+        .partners__holder
+            .partners__inner
+                .container
+                    h2.title.title--tac Nos étudiants travaillent pour ces entreprises
+                    .partners__items.row
+                        each partner in partners
+                            figure.partners__item.col-sm-6.col-md-3     
+                                img.partners__img(src="images/" + partner, alt=partner)
+
+    section.cta
+        .container
+            .title.title--tac Commencer votre essai gratuit
+            .row
+                a.button.button--cornered.col-sm-8.col-md-6.col-lg-4.mx-auto(href="#") Commencer
+
+    footer.footer
+        .container
+            .row
+                .col-md-6.col-lg-4
+                    img(src="images/dyma.png", alt="Dyma", width="100")
+                .col-md-6.col-lg-4
+                    h3.title.title--sm Les formations
+                    nav.footer__nav
+                        ul
+                            li
+                                a(href="#") Formation HTML & CSS
+                            li
+                                a(href="#") Formation JavaScript
+                .col-md-6.col-lg-4
+                    h3.title.title--sm Entreprise &amp; Blog
+                    nav.footer__nav
+                        ul
+                            li
+                                a(href="#") Formation HTML & CSS
+                            li
+                                a(href="#") Formation JavaScript
+                    div Vous avez une question ?<br>contact@dyma.fr
+
+

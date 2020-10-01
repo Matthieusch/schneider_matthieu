@@ -1,0 +1,14 @@
+.title {
+    font-size: 2rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    
+    &--tac {
+        text-align: center;
+    }
+
+    &--sm {
+        color: #61dafb;
+        font-size: 1.5rem;
+    }
+}

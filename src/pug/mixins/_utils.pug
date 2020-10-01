@@ -1,0 +1,63 @@
+//- Declaration tony
+mixin tony
+    input(type="color" onChange="document.body.style.color = this.value;")
+
+//- Declaration head
+mixin head(title, description, css)
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title #{title}
+        if description
+            meta(name="description" content=description)
+        
+        //- CSS
+        link(rel="stylesheet" href="css/styles-purged.css")
+
+        //- Favicons
+        link(rel='apple-touch-icon' sizes='180x180' href='favicons/apple-touch-icon.png')
+        link(rel='icon' type='image/png' sizes='32x32' href='favicons/favicon-32x32.png')
+        link(rel='icon' type='image/png' sizes='16x16' href='favicons/favicon-16x16.png')
+        link(rel='manifest' href='favicons/site.webmanifest')
+        link(rel='mask-icon' href='favicons/safari-pinned-tab.svg' color='#5bbad5')
+        link(rel='shortcut icon' href='favicons/favicon.ico')
+        meta(name='msapplication-TileColor' content='#2d89ef')
+        meta(name='msapplication-config' content='favicons/browserconfig.xml')
+        meta(name='theme-color' content='#ffffff')
+
+//- Declaration navigation
+mixin nav(current)
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-danger
+        a.navbar-brand(href='#') MSOffice
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarNav.collapse.navbar-collapse
+            ul.navbar-nav.mr-auto
+                li.nav-item(class=(current == "dashboard.html" ? "active" : ""))
+                    a.nav-link(href='dashboard.html')
+                        | Tableau de bord 
+                        span.sr-only (current)
+                li.nav-item(class=(current == "add.html" ? "active" : ""))
+                    a.nav-link(href='add.html') Ajouter d'article
+                li.nav-item(class=(current == "client.html" ? "active" : ""))
+                    a.nav-link(href='client.html') Voir le site
+
+            ul.navbar-nav
+                li.nav-item(class=(current == "index.html" ? "active" : ""))
+                    a.nav-link(href='index.html') Déconnexion
+
+//- Déclaration footer
+mixin footer
+    footer.footer
+        div.container
+            | Copyright MS - 2077
+
+//- Déclaration article
+mixin articleSmall(title, date, author, image, content)
+    article.col-lg-6.col-xl-4
+        .card
+            img.card-img-top(src=image, alt=title)
+            .card-body
+                h2.card-title=title
+                p.card-text=content
+                a.btn.btn-primary(href='#') Go somewhere
